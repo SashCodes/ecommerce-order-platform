@@ -40,17 +40,17 @@ All services communicate synchronously using REST.
 
 2. Order Service validates product availability via Product Service
 
- - If product is unavailable, the request fails with a business error
+  - If product is unavailable, the request fails with a business error
 
- - If product is available, Order Service creates an order with status CREATED
+  - If product is available, Order Service creates an order with status CREATED
 
 3. Order Service calls Payment Service
 
 4. Based on payment response:
 
- - Order is marked CONFIRMED on success
+  - Order is marked CONFIRMED on success
 
- - Order is marked FAILED on payment failure
+  - Order is marked FAILED on payment failure
 
 5. Order response is returned to the client
 
@@ -99,15 +99,15 @@ URLs and service behavior are kept simple for clarity and extensibility
 
 ## ▶️ How to Run Locally
 
-- Start Product Service (port 8081)
+1. Start Product Service (port 8081)
 
-- Start Payment Service (port 8082)
+2. Start Payment Service (port 8082)
 
-- Start Order Service (port 8080)
+3. Start Order Service (port 8080)
 
-- Use Postman or TalendAPI to test APIs
+ - Use Postman or TalendAPI to test APIs
 
-- H2 in-memory database is used for persistence in Order Service.
+ - H2 in-memory database is used for persistence in Order Service.
 
 ## 🚀 Possible Future Enhancements
 
@@ -123,4 +123,4 @@ URLs and service behavior are kept simple for clarity and extensibility
 
 - Add a User service and Notification service
 
-Add a frontend UI in React
+- Add a frontend UI in React
