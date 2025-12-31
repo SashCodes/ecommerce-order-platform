@@ -12,47 +12,47 @@ The system consists of three independent Spring Boot services:
 
 ### Order Service
 
-    Accepts order requests
+- Accepts order requests
 
-    Validates product availability
+- Validates product availability
 
-    Initiates payment
+- Initiates payment
 
-    Manages order lifecycle and status
+- Manages order lifecycle and status
 
 ### Product Service
 
-    Provides product availability information
+- Provides product availability information
 
-    Simulates inventory behavior
+- Simulates inventory behavior
 
 ### Payment Service
 
-    Simulates payment processing
+- Simulates payment processing
 
-    Randomly returns success or failure
+- Randomly returns success or failure
 
 All services communicate synchronously using REST.
 
 ## 🔄 End-to-End Order Flow
 
-Client sends a request to POST /orders
+1. Client sends a request to POST /orders
 
-Order Service validates product availability via Product Service
+2. Order Service validates product availability via Product Service
 
-    If product is unavailable, the request fails with a business error
+ - If product is unavailable, the request fails with a business error
 
-    If product is available, Order Service creates an order with status CREATED
+ - If product is available, Order Service creates an order with status CREATED
 
-Order Service calls Payment Service
+3. Order Service calls Payment Service
 
-Based on payment response:
+4. Based on payment response:
 
-    Order is marked CONFIRMED on success
+ - Order is marked CONFIRMED on success
 
-    Order is marked FAILED on payment failure
+ - Order is marked FAILED on payment failure
 
-Order response is returned to the client
+5. Order response is returned to the client
 
 ## 📡 API Summary
 
